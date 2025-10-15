@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LightHouse Media - Ready for Non-Stop Entertainment</title>
+    <title>Palma Tv - Ready for Non-Stop Entertainment</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,16 +24,20 @@
     </script>
     <style>
         :root {
-            /* Brand palette */
-            --navy: #1E2A44;
-            --dark-bg: #0C1526;
-            --light-bg: #E8EDF6;
-            --text-dark: #0C1526;
-            --text-muted: #C0C8D6;
-            --brand: #F9A602; /* gold */
-            --brand-strong: #FFD580; /* hover gold */
-            /* RGB for alpha */
-            --brand-r: 249; --brand-g: 166; --brand-b: 2;
+            /* Palma Tv Brand palette */
+            --primary: #F37021; /* Sunset Orange - Buttons, highlights */
+            --secondary: #FDB813; /* Golden Yellow - Background accents, hover effects */
+            --accent: #E94E1B; /* Sun Red - Call-to-action buttons or gradients */
+            --dark: #0C2233; /* Palm Silhouette - Header text, footer, icons */
+            --background: #000000; /* Night Sky Black - Page background or dark mode base */
+            --light-bg: #FDB813; /* Golden Yellow for light sections */
+            --text-dark: #0C2233; /* Palm Silhouette for dark text */
+            --text-muted: #8B9DB3; /* Muted text color */
+            /* RGB values for alpha transparency */
+            --primary-r: 243; --primary-g: 112; --primary-b: 33;
+            --secondary-r: 253; --secondary-g: 184; --secondary-b: 19;
+            --accent-r: 233; --accent-g: 78; --accent-b: 27;
+            --dark-r: 12; --dark-g: 34; --dark-b: 51;
         }
         .hero-gradient {
             background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
@@ -41,54 +45,54 @@
         .streaming-card {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.3);
+            border: 1px solid rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.3);
             transition: all 0.3s ease;
         }
         .streaming-card:hover {
-            border: 1px solid rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.6);
+            border: 1px solid rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.6);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.2);
+            box-shadow: 0 10px 30px rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.2);
         }
         /* Make cards readable on light sections */
         .light-section .streaming-card {
             background: rgba(255,255,255,0.92);
         }
         .light-section .streaming-card:hover {
-            box-shadow: 0 10px 30px rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.18);
+            box-shadow: 0 10px 30px rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.18);
         }
-        .green-glow {
-            box-shadow: 0 0 20px rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.3);
+        .primary-glow {
+            box-shadow: 0 0 20px rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.3);
         }
-        .green-text {
-            color: var(--brand);
+        .primary-text {
+            color: var(--primary);
         }
-        .green-gradient {
-            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-strong) 100%);
+        .primary-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
-        .green-border {
-            border: 2px solid var(--brand);
+        .primary-border {
+            border: 2px solid var(--primary);
         }
         html {
             scroll-behavior: smooth;
         }
         /* Global backgrounds and helpers */
-        .bg-dark-brand { background-color: var(--dark-bg); }
+        .bg-dark-brand { background-color: var(--background); }
         .bg-light-brand { background-color: var(--light-bg); }
-        .navy-bg { background-color: var(--navy); }
+        .navy-bg { background-color: var(--dark); }
         .light-section .text-white { color: var(--text-dark) !important; }
         .light-section .text-gray-400, .light-section .text-gray-300 { color: var(--text-dark) !important; }
         .icon-muted { color: var(--text-muted); }
         .divider-muted { border-color: var(--text-muted) !important; }
         /* Brand helper utilities */
-        .brand-outline-50 { border-color: rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.5) !important; }
-        .brand-outline-30 { border-color: rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.3) !important; }
-        .hover\:brand-outline-60:hover { border-color: rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.6) !important; }
-        .hover\:brand-bg-10:hover { background: rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.10) !important; }
-        .hover\:brand-shadow-25:hover { box-shadow: 0 10px 30px rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.25) !important; }
-        .brand-icon { color: rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.85) !important; }
-        .brand-tint-left { background: linear-gradient(to right, rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.20), transparent); }
-        .brand-tint-right { background: linear-gradient(to left, rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.20), transparent); }
-        footer.border-t { border-top-color: rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.20); }
+        .brand-outline-50 { border-color: rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.5) !important; }
+        .brand-outline-30 { border-color: rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.3) !important; }
+        .hover\:brand-outline-60:hover { border-color: rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.6) !important; }
+        .hover\:brand-bg-10:hover { background: rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.10) !important; }
+        .hover\:brand-shadow-25:hover { box-shadow: 0 10px 30px rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.25) !important; }
+        .brand-icon { color: rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.85) !important; }
+        .brand-tint-left { background: linear-gradient(to right, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.20), transparent); }
+        .brand-tint-right { background: linear-gradient(to left, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.20), transparent); }
+        footer.border-t { border-top-color: rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.20); }
         /* Posters reveal + overlay */
         .poster-card {
             transform: translateY(30px);
@@ -109,7 +113,7 @@
         /* Watch Anywhere section helper */
         .glass-card {
             background: rgba(0,0,0,0.55);
-            border: 1px solid rgba(var(--brand-r), var(--brand-g), var(--brand-b), 0.25);
+            border: 1px solid rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.25);
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.35);
         }
@@ -125,8 +129,8 @@
     <nav class="relative z-50 px-6 py-6 navy-bg backdrop-blur-sm">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="assets/images/logos/6001508208616786950.jpg" alt="LightHouse Media Logo" class="w-12 h-12 rounded-lg object-cover">
-                <span class="text-3xl font-bold text-white">LightHouse Media</span>
+                <img src="assets/images/logos/fdfdsgf.jpg" alt="Palma Tv Logo" class="w-12 h-12 rounded-lg object-cover">
+                <span class="text-3xl font-bold text-white">Palma Tv</span>
             </div>
             
             <div class="flex items-center space-x-2 md:space-x-4 ml-4 sm:ml-6 md:ml-0">
@@ -136,7 +140,7 @@
                 <a href="#" onclick="return false;" aria-label="Signal" class="w-8 h-8 md:w-9 md:h-9 rounded-full border brand-outline-50 flex items-center justify-center hover:brand-bg-10 shrink-0">
                     <img src="./assets/images/icons/signal_app_icon-removebg-preview.png" alt="Signal" class="w-4 h-4 md:w-5 md:h-5 object-contain"/>
                 </a>
-                <a href="#" onclick="return false;" aria-label="Telegram" class="w-8 h-8 md:w-9 md:h-9 rounded-full border brand-outline-50 flex items-center justify-center hover:brand-bg-10 shrink-0">
+                <a href="https://t.me/Luis28Madrid" aria-label="Telegram" class="w-8 h-8 md:w-9 md:h-9 rounded-full border brand-outline-50 flex items-center justify-center hover:brand-bg-10 shrink-0">
                     <img src="./assets/images/icons/Telegram-icon-removebg-preview.png" alt="Telegram" class="w-4 h-4 md:w-5 md:h-5 object-contain"/>
                 </a>
             </div>
@@ -164,7 +168,7 @@
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 Unlimited Movies, Series & Live TV
                 <br>
-                <span class="green-text">— Anytime, Anywhere</span>
+                <span class="primary-text">— Anytime, Anywhere</span>
             </h1>
             
             <p class="text-xl text-white mb-8 font-light max-w-2xl mx-auto">
@@ -172,7 +176,7 @@
             </p>
             
             <div class="flex justify-center">
-                <a href="#" onclick="return false;" class="green-gradient hover:shadow-lg hover:brand-shadow-25 text-white px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl flex items-center space-x-3 green-glow">
+                <a href="#" onclick="return false;" class="primary-gradient hover:shadow-lg hover:brand-shadow-25 text-white px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl flex items-center space-x-3 primary-glow">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M8 5v10l8-5-8-5z"/>
                     </svg>
@@ -181,7 +185,7 @@
             </div>
             
             <div class="mt-12">
-                <p class="text-lg green-text font-semibold mb-3">Top quality for the best price!</p>
+                <p class="text-lg primary-text font-semibold mb-3">Top quality for the best price!</p>
                 <p class="text-gray-300 max-w-xl mx-auto text-sm">
                     Do you have questions or want more info? We are always ready to help you quickly and personally ✓
                 </p>
@@ -195,7 +199,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center place-items-center justify-items-center">
                 <div class="flex flex-col items-center h-full">
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-5 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-5 primary-glow">
                         <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M8 5v10l8-5-8-5z"/>
                         </svg>
@@ -205,7 +209,7 @@
                 </div>
 
                 <div class="flex flex-col items-center h-full">
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-5 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-5 primary-glow">
                         <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
                         </svg>
@@ -215,7 +219,7 @@
                 </div>
 
                 <div class="flex flex-col items-center h-full">
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-5 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-5 primary-glow">
                         <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
                             <path fill-rule="evenodd" d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
@@ -226,7 +230,7 @@
                 </div>
 
                 <div class="flex flex-col items-center h-full">
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-5 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-5 primary-glow">
                         <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                         </svg>
@@ -279,8 +283,8 @@
         <div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image: url('assets/images/overlays/free-iptv-featured-image.webp');"></div>
         <!-- Dark + green tint overlay (aligned with hero style) -->
         <div class="absolute inset-0 -z-10 bg-black/60"></div>
-        <div class="absolute top-0 left-0 -z-10 w-1/3 h-full bg-gradient-to-r from-green-900/20 to-transparent"></div>
-        <div class="absolute top-0 right-0 -z-10 w-1/3 h-full bg-gradient-to-l from-green-900/20 to-transparent"></div>
+        <div class="absolute top-0 left-0 -z-10 w-1/3 h-full bg-gradient-to-r from-orange-900/20 to-transparent"></div>
+        <div class="absolute top-0 right-0 -z-10 w-1/3 h-full bg-gradient-to-l from-orange-900/20 to-transparent"></div>
         <div class="absolute bottom-0 left-0 -z-10 w-full h-1/3 bg-gradient-to-t from-black/70 to-transparent"></div>
 
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center justify-center">
@@ -309,7 +313,7 @@
                 </div>
 
                 <div class="mt-8 flex justify-center">
-                    <a href="#" onclick="return false;" class="green-gradient hover:shadow-lg hover:brand-shadow-25 text-white font-semibold px-6 py-3 rounded-xl green-glow inline-block">Get Started Today</a>
+                    <a href="#" onclick="return false;" class="primary-gradient hover:shadow-lg hover:brand-shadow-25 text-white font-semibold px-6 py-3 rounded-xl primary-glow inline-block">Get Started Today</a>
                 </div>
             </div>
 
@@ -327,19 +331,19 @@
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center place-items-center justify-items-center">
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold green-text mb-2">10M+</div>
+                    <div class="text-4xl md:text-5xl font-extrabold primary-text mb-2">10M+</div>
                     <div class="text-gray-400 text-sm md:text-base">Active Users</div>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold green-text mb-2">222K+</div>
+                    <div class="text-4xl md:text-5xl font-extrabold primary-text mb-2">222K+</div>
                     <div class="text-gray-400 text-sm md:text-base">Movies & Shows</div>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold green-text mb-2">99.9%</div>
+                    <div class="text-4xl md:text-5xl font-extrabold primary-text mb-2">99.9%</div>
                     <div class="text-gray-400 text-sm md:text-base">Uptime</div>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-extrabold green-text mb-2">4.9</div>
+                    <div class="text-4xl md:text-5xl font-extrabold primary-text mb-2">4.9</div>
                     <div class="text-gray-400 flex items-center justify-center text-sm md:text-base">
                         <svg class="w-5 h-5 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -364,49 +368,49 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center justify-items-center">
                 <div class="solution-card streaming-card rounded-2xl p-8 text-center w-full min-h-[380px] flex flex-col">
                     <div class="card-overlay rounded-2xl"></div>
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-6 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-6 primary-glow">
                         <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7-11-7z"/></svg>
                     </div>
                     <h3 class="text-xl font-semibold text-white">Premium Subscription</h3>
                     <p class="text-gray-400 mt-3">Full access to our entertainment library with unlimited streaming subscriptions</p>
                     <div class="mt-auto flex justify-center">
-                        <a href="#" onclick="return false;" class="green-border text-white px-5 py-2 rounded-lg hover:bg-green-500/10 transition inline-block">Learn More</a>
+                        <a href="#" onclick="return false;" class="primary-border text-white px-5 py-2 rounded-lg hover:bg-orange-500/10 transition inline-block">Learn More</a>
                     </div>
                 </div>
 
                 <div class="solution-card streaming-card rounded-2xl p-8 text-center w-full min-h-[380px] flex flex-col">
                     <div class="card-overlay rounded-2xl"></div>
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-6 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-6 primary-glow">
                         <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v10H4z"/><path d="M8 18h8a1 1 0 110 2H8a1 1 0 110-2z"/></svg>
                     </div>
                     <h3 class="text-xl font-semibold text-white">Panel Provision</h3>
                     <p class="text-gray-400 mt-3">Complete streaming panel solutions for businesses and resellers</p>
                     <div class="mt-auto flex justify-center">
-                        <a href="#" onclick="return false;" class="green-border text-white px-5 py-2 rounded-lg hover:bg-green-500/10 transition inline-block">Explore</a>
+                        <a href="#" onclick="return false;" class="primary-border text-white px-5 py-2 rounded-lg hover:bg-orange-500/10 transition inline-block">Explore</a>
                     </div>
                 </div>
 
                 <div class="solution-card streaming-card rounded-2xl p-8 text-center w-full min-h-[380px] flex flex-col">
                     <div class="card-overlay rounded-2xl"></div>
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-6 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-6 primary-glow">
                         <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a2 2 0 012 2v6h6a2 2 0 012 2v0a2 2 0 01-2 2h-6v6a2 2 0 01-2 2v0a2 2 0 01-2-2v-6H4a2 2 0 01-2-2v0a2 2 0 012-2h6V4a2 2 0 012-2z"/></svg>
                     </div>
                     <h3 class="text-xl font-semibold text-white">Credit System</h3>
                     <p class="text-gray-400 mt-3">Flexible payment options with our digital credit system</p>
                     <div class="mt-auto flex justify-center">
-                        <a href="#" onclick="return false;" class="green-border text-white px-5 py-2 rounded-lg hover:bg-green-500/10 transition inline-block">Get Credits</a>
+                        <a href="#" onclick="return false;" class="primary-border text-white px-5 py-2 rounded-lg hover:bg-orange-500/10 transition inline-block">Get Credits</a>
                     </div>
                 </div>
 
                 <div class="solution-card streaming-card rounded-2xl p-8 text-center w-full min-h-[380px] flex flex-col">
                     <div class="card-overlay rounded-2xl"></div>
-                    <div class="w-16 h-16 green-gradient rounded-full flex items-center justify-center mx-auto mb-6 green-glow">
+                    <div class="w-16 h-16 primary-gradient rounded-full flex items-center justify-center mx-auto mb-6 primary-glow">
                         <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h10v6H7z"/><path d="M5 17h14a1 1 0 110 2H5a1 1 0 110-2z"/></svg>
                     </div>
                     <h3 class="text-xl font-semibold text-white">Rebrand Services</h3>
                     <p class="text-gray-400 mt-3">Personalized streaming experience with your own custom branding</p>
                     <div class="mt-auto flex justify-center">
-                        <a href="#" onclick="return false;" class="green-border text-white px-5 py-2 rounded-lg hover:bg-green-500/10 transition inline-block">Customize</a>
+                        <a href="#" onclick="return false;" class="primary-border text-white px-5 py-2 rounded-lg hover:bg-orange-500/10 transition inline-block">Customize</a>
             </div>
                 </div>
             </div>
@@ -440,7 +444,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center justify-items-center">
                 <div class="streaming-card rounded-2xl p-8 w-full max-w-xl relative">
-                    <div class="absolute inset-0 rounded-2xl pointer-events-none" style="box-shadow: inset 0 0 0 1px rgba(34,197,94,0.25)"></div>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none" style="box-shadow: inset 0 0 0 1px rgba(243,112,33,0.25)"></div>
                     <div class="flex items-center gap-4">
                         <img src="assets/images/testimonials/sahrah.webp" alt="Sahrah Johnson" class="w-12 h-12 rounded-full object-cover" loading="lazy" decoding="async" srcset="assets/images/testimonials/sahrah.webp 1x, assets/images/testimonials/sahrah.webp 2x" sizes="48px"/>
                         <div>
@@ -452,7 +456,7 @@
                 </div>
 
                 <div class="streaming-card rounded-2xl p-8 w-full max-w-xl relative">
-                    <div class="absolute inset-0 rounded-2xl pointer-events-none" style="box-shadow: inset 0 0 0 1px rgba(34,197,94,0.25)"></div>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none" style="box-shadow: inset 0 0 0 1px rgba(243,112,33,0.25)"></div>
                     <div class="flex items-center gap-4">
                         <img src="assets/images/testimonials/mike.jpg" alt="Mike Chen" class="w-12 h-12 rounded-full object-cover" loading="lazy" decoding="async" srcset="assets/images/testimonials/mike.jpg 1x, assets/images/testimonials/mike.jpg 2x" sizes="48px"/>
                         <div>
@@ -464,7 +468,7 @@
                 </div>
 
                 <div class="streaming-card rounded-2xl p-8 w-full max-w-xl relative">
-                    <div class="absolute inset-0 rounded-2xl pointer-events-none" style="box-shadow: inset 0 0 0 1px rgba(34,197,94,0.25)"></div>
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none" style="box-shadow: inset 0 0 0 1px rgba(243,112,33,0.25)"></div>
                     <div class="flex items-center gap-4">
                         <img src="assets/images/testimonials/davis.jpg" alt="Emma Davis" class="w-12 h-12 rounded-full object-cover" loading="lazy" decoding="async" srcset="assets/images/testimonials/davis.jpg 1x, assets/images/testimonials/davis.jpg 2x" sizes="48px"/>
                         <div>
@@ -485,10 +489,10 @@
                 Ready to Start Streaming?
             </h2>
             <p class="text-xl text-gray-300 mb-6">
-                Join thousands of users who trust LightHouse Media for their entertainment needs.
+                Join thousands of users who trust Palma Tv for their entertainment needs.
             </p>
             <div class="flex justify-center">
-                <a href="#" onclick="return false;" class="green-gradient text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all transform hover:scale-105 green-glow inline-block">
+                <a href="#" onclick="return false;" class="primary-gradient text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all transform hover:scale-105 primary-glow inline-block">
                     Get Started Now
                 </a>
             </div>
@@ -499,7 +503,7 @@
     <footer class="px-6 py-14 border-t divider-muted navy-bg">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
             <div>
-                <h3 class="text-2xl font-extrabold text-white">LightHouse Media</h3>
+                <h3 class="text-2xl font-extrabold text-white">Palma Tv</h3>
                 <p class="text-gray-400 mt-3 max-w-md">Your premium destination for unlimited entertainment. Stream movies, series, and live TV anywhere.</p>
             </div>
             <div>
@@ -513,11 +517,11 @@
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-3">Connect</h4>
-                <a href="#" onclick="return false;" class="green-gradient text-white px-6 py-3 rounded-lg font-semibold green-glow inline-block">Join Our Telegram</a>
+                <a href="https://t.me/Luis28Madrid" class="primary-gradient text-white px-6 py-3 rounded-lg font-semibold primary-glow inline-block">Join Our Telegram</a>
             </div>
         </div>
         <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-800 text-gray-500 text-sm text-center">
-            © 2024 LightHouse Media. All rights reserved.
+            © 2024 Palma Tv. All rights reserved.
         </div>
     </footer>
 
