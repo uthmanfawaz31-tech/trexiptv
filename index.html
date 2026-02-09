@@ -78,8 +78,9 @@
             scroll-behavior: smooth;
         }
         /* Global backgrounds and helpers */
-        .bg-dark-brand { background-color: var(--background); }
-        .bg-light-brand { background-color: var(--light-bg); }
+        /* Slight transparency so global particles subtly show through */
+        .bg-dark-brand { background-color: rgba(2, 6, 23, 0.97); }  /* #020617 */
+        .bg-light-brand { background-color: rgba(2, 12, 27, 0.97); } /* #020C1B */
         .navy-bg { background-color: var(--dark); }
         .light-section .text-white { color: var(--text-dark) !important; }
         .light-section .text-gray-400, .light-section .text-gray-300 { color: var(--text-dark) !important; }
@@ -127,6 +128,10 @@
     </style>
 </head>
 <body class="min-h-screen bg-dark-brand">
+    <!-- Global low-weight particles canvas (behind all sections) -->
+    <div class="fixed inset-0 -z-10 pointer-events-none">
+        <canvas id="particles-bg" class="w-full h-full" aria-hidden="true"></canvas>
+    </div>
     <!-- Navigation (ShadowStream-style sticky, with section anchors) -->
     <nav class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 py-3 sm:py-4 navy-bg/90 backdrop-blur-md border-b border-black/40">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -163,10 +168,6 @@
                         <img src="./assets/images/icons/whatsapp_icon-removebg-preview.png" alt="WhatsApp" class="w-4 h-4 object-contain"/>
                         <span>Chat on WhatsApp</span>
                     </a>
-                    <!-- Icon-only for very small screens -->
-                    <a href="https://wa.me/qr/3AOHSSPUNSEIE1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="sm:hidden w-9 h-9 rounded-full border brand-outline-50 flex items-center justify-center hover:brand-bg-10 shrink-0 cursor-pointer transition">
-                        <img src="./assets/images/icons/whatsapp_icon-removebg-preview.png" alt="WhatsApp" class="w-5 h-5 object-contain"/>
-                    </a>
                 </div>
             </div>
         </div>
@@ -199,8 +200,6 @@
             <div class="absolute top-0 left-0 w-1/3 h-full brand-tint-left"></div>
             <div class="absolute top-0 right-0 w-1/3 h-full brand-tint-right"></div>
             <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
-            <!-- Lightweight 3D-like particles canvas -->
-            <canvas id="particles-bg" class="absolute inset-0 w-full h-full pointer-events-none z-[1]" aria-hidden="true"></canvas>
         </div>
         
         <!-- Content -->
