@@ -135,28 +135,55 @@
                 <span class="text-xl sm:text-2xl font-bold text-white tracking-tight">Trex IPTV</span>
             </div>
 
-            <!-- Desktop nav -->
-            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-200">
-                <a href="#home" class="hover:text-white transition-colors">Home</a>
-                <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
-                <a href="#devices" class="hover:text-white transition-colors">Devices</a>
-                <a href="#portfolio" class="hover:text-white transition-colors">Channels & VOD</a>
-                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-            </div>
+            <div class="flex items-center ml-auto space-x-3">
+                <!-- Mobile hamburger -->
+                <button
+                    type="button"
+                    class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/10 text-gray-200 hover:bg-white/5 transition"
+                    aria-label="Toggle navigation"
+                    onclick="toggleMenu()">
+                    <span class="sr-only">Open navigation</span>
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </button>
 
-            <!-- WhatsApp CTA -->
-            <div class="flex items-center ml-3 sm:ml-4">
-                <a href="https://wa.me/qr/3AOHSSPUNSEIE1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="hidden sm:flex items-center gap-2 primary-gradient primary-glow px-4 py-2 rounded-lg text-sm font-semibold text-black hover:brand-shadow-25 transition">
-                    <img src="./assets/images/icons/whatsapp_icon-removebg-preview.png" alt="WhatsApp" class="w-4 h-4 object-contain"/>
-                    <span>Chat on WhatsApp</span>
-                </a>
-                <!-- Icon-only for very small screens -->
-                <a href="https://wa.me/qr/3AOHSSPUNSEIE1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="sm:hidden w-9 h-9 rounded-full border brand-outline-50 flex items-center justify-center hover:brand-bg-10 shrink-0 cursor-pointer transition">
-                    <img src="./assets/images/icons/whatsapp_icon-removebg-preview.png" alt="WhatsApp" class="w-5 h-5 object-contain"/>
-                </a>
+                <!-- Desktop nav -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-200">
+                    <a href="#home" class="hover:text-white transition-colors">Home</a>
+                    <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                    <a href="#devices" class="hover:text-white transition-colors">Devices</a>
+                    <a href="#portfolio" class="hover:text-white transition-colors">Channels & VOD</a>
+                    <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+                </div>
+
+                <!-- WhatsApp CTA -->
+                <div class="flex items-center ml-1 sm:ml-3">
+                    <a href="https://wa.me/qr/3AOHSSPUNSEIE1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="hidden sm:flex items-center gap-2 primary-gradient primary-glow px-4 py-2 rounded-lg text-sm font-semibold text-black hover:brand-shadow-25 transition">
+                        <img src="./assets/images/icons/whatsapp_icon-removebg-preview.png" alt="WhatsApp" class="w-4 h-4 object-contain"/>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                    <!-- Icon-only for very small screens -->
+                    <a href="https://wa.me/qr/3AOHSSPUNSEIE1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="sm:hidden w-9 h-9 rounded-full border brand-outline-50 flex items-center justify-center hover:brand-bg-10 shrink-0 cursor-pointer transition">
+                        <img src="./assets/images/icons/whatsapp_icon-removebg-preview.png" alt="WhatsApp" class="w-5 h-5 object-contain"/>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile navigation drawer -->
+    <div id="mobileMenu" class="md:hidden fixed top-14 inset-x-0 z-40 bg-black/95 border-b border-white/10 px-4 py-4 space-y-3 text-sm font-medium text-gray-100 hidden">
+        <a href="#home" class="block py-1.5 hover:text-white transition-colors" onclick="toggleMenu()">Home</a>
+        <a href="#pricing" class="block py-1.5 hover:text-white transition-colors" onclick="toggleMenu()">Pricing</a>
+        <a href="#devices" class="block py-1.5 hover:text-white transition-colors" onclick="toggleMenu()">Devices</a>
+        <a href="#portfolio" class="block py-1.5 hover:text-white transition-colors" onclick="toggleMenu()">Channels & VOD</a>
+        <a href="#faq" class="block py-1.5 hover:text-white transition-colors" onclick="toggleMenu()">FAQ</a>
+        <a href="https://wa.me/qr/3AOHSSPUNSEIE1" target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex w-full items-center justify-center gap-2 primary-gradient primary-glow text-black px-4 py-2.5 rounded-lg hover:brand-shadow-25 transition">
+            <img src="./assets/images/icons/whatsapp_icon-removebg-preview.png" alt="WhatsApp" class="w-4 h-4 object-contain"/>
+            <span>Chat on WhatsApp</span>
+        </a>
+    </div>
     
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-20 sm:pt-24">
@@ -172,6 +199,8 @@
             <div class="absolute top-0 left-0 w-1/3 h-full brand-tint-left"></div>
             <div class="absolute top-0 right-0 w-1/3 h-full brand-tint-right"></div>
             <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
+            <!-- Lightweight 3D-like particles canvas -->
+            <canvas id="particles-bg" class="absolute inset-0 w-full h-full pointer-events-none z-[1]" aria-hidden="true"></canvas>
         </div>
         
         <!-- Content -->
@@ -834,8 +863,10 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
+            if (!menu) return;
             menu.classList.toggle('hidden');
         }
+
         // Reveal posters on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -847,6 +878,86 @@
         }, { threshold: 0.2 });
 
         document.querySelectorAll('.poster-card').forEach(card => observer.observe(card));
+
+        // Lightweight flowing 3D-like particles background for hero
+        (function initParticles() {
+            const canvas = document.getElementById('particles-bg');
+            if (!canvas || !canvas.getContext) return;
+
+            const ctx = canvas.getContext('2d');
+            let width = 0;
+            let height = 0;
+            let dpr = window.devicePixelRatio || 1;
+
+            const PARTICLE_COUNT = 45; // keep this low so effect is light
+            const particles = [];
+
+            function resize() {
+                const rect = canvas.getBoundingClientRect();
+                width = rect.width;
+                height = rect.height;
+                dpr = window.devicePixelRatio || 1;
+
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function createParticles() {
+                particles.length = 0;
+                for (let i = 0; i < PARTICLE_COUNT; i++) {
+                    const depth = Math.random(); // 0..1 pseudo "z" depth
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        depth,
+                        radius: 0.8 + depth * 1.7,
+                        alpha: 0.15 + depth * 0.25,
+                        vx: (-0.1 + Math.random() * 0.2) * (0.6 + depth),
+                        vy: (-0.05 + Math.random() * 0.1) * (0.6 + depth)
+                    });
+                }
+            }
+
+            function step() {
+                if (!width || !height) {
+                    requestAnimationFrame(step);
+                    return;
+                }
+
+                ctx.clearRect(0, 0, width, height);
+
+                for (const p of particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Wrap around edges for continuous flow
+                    if (p.x < -5) p.x = width + 5;
+                    if (p.x > width + 5) p.x = -5;
+                    if (p.y < -5) p.y = height + 5;
+                    if (p.y > height + 5) p.y = -5;
+
+                    const size = p.radius * (0.7 + p.depth * 0.6);
+
+                    ctx.beginPath();
+                    ctx.fillStyle = `rgba(49, 217, 122, ${p.alpha})`; // brand neon green with transparency
+                    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(step);
+            }
+
+            function handleResize() {
+                resize();
+                createParticles();
+            }
+
+            window.addEventListener('resize', handleResize);
+
+            handleResize();
+            requestAnimationFrame(step);
+        })();
     </script>
 </body>
 </html>
